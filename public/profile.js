@@ -1,4 +1,4 @@
-const addInfo = (res) => {
+const ShowInfo = (res) => {
   const gallery = document.querySelector(".profile");
   let html = "";
     html += `
@@ -47,12 +47,12 @@ const callAPI = async (username) => {
     //check response return from our API
     console.log("response ----> ", res);
 //6. Add images to gallery
-    addInfo(res);
+    ShowInfo(res);
   } catch (error) {
     console.log("message error --->", error);
   }
 };
-const photo = (res) => {
+const showPhoto = (res) => {
   const photo = document.querySelector(".gallery");
   let html = "";
   res.forEach((element) => {
@@ -80,7 +80,7 @@ const photo = (res) => {
 const callphoto = async (username) => {
   try {
     console.log("Username --> ", username);
-    const response = await fetch("/api/Photo", {
+    const response = await fetch("/api/showPhoto", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -92,7 +92,7 @@ const callphoto = async (username) => {
     //check response return from our API
     console.log("response ----> ", res);
 //6. Add images to gallery
-    photo(res);
+showPhoto(res);
   } catch (error) {
     console.log("message error --->", error);
   }

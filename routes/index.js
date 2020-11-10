@@ -38,7 +38,7 @@ router.post('/api/searchUser', (req,res)=>{
     });
 
 });
-router.post('/api/Photo', (req,res)=>{
+router.post('/api/showPhoto', (req,res)=>{
     //PUT YOUR CODE HERE
     let {username} = req.body;
     unsplash.users.photos(username, 1, 12, "latest")
